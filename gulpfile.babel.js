@@ -11,18 +11,32 @@ gulp.task('build', [], () =>
 );
 
 gulp.task('watch', ['build'], () => {
-    gulp.watch(['src/**/*.*'], ['build']);
-    gulp.start('run');
+  gulp.watch(['src/**/*.*'], ['build']);
+  gulp.start('run');
 });
 
 gulp.task('run', ['build'], () => {
-    nodemon({
-        delay: 10,
-        script: 'dist/main.js',
-        // args: ["config.json"],
-        ext: 'js',
-        watch: 'src'
-    })
+  nodemon({
+    delay: 10,
+    script: 'dist/main.js',
+    ext: 'js',
+    watch: 'src',
+  })
+});
+
+gulp.task('watch-debug', ['build'], () => {
+  gulp.watch(['src/**/*.*'], ['build']);
+  gulp.start('run-debug');
+});
+
+gulp.task('run-debug', ['build'], () => {
+  nodemon({
+    delay: 10,
+    script: 'dist/main.js',
+    env: {'DEBUG': '*'},
+    ext: 'js',
+    watch: 'src',
+  })
 });
 
 gulp.task('default', ['build', 'run']);

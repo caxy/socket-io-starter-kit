@@ -9,12 +9,13 @@ let server = http.Server(app);
 let io = new SocketIO(server);
 let port = process.env.PORT || 3000;
 
-app.use(express['static'](__dirname + '/../client'));
-
 io.on('connection', (socket) => {
-  socket.on('ping', () => {
-    console.log("Pinged");
-    socket.emit('pong');
+  console.log("Connection");
+
+  socket.emit('ding');
+
+  socket.on('ding', () => {
+    socket.emit('dong');
   });
 });
 

@@ -10,16 +10,24 @@ var options ={
 
 describe("Ping Pong",function(){
 
-  /* Test 1 - A Single User */
-  it('Should return Pong when Pinged',function(done){
+  /* Test 1  */
+  it('Should receive a ding', function(done){
     var client = io.connect(socketURL, options);
 
-    client.on('connect',function(data){
+    client.on('ding', () => {
+      client.disconnect();
+      done();
+    });
+  });
 
-      console.log("Ping");
-      client.emit('ping', function(d2) {
-        console.log(d2);
-      })
+  /* Test 2 */
+  it('Should return dong when dinged', function(done){
+    var client = io.connect(socketURL, options);
+    client.emit('ding');
+
+    client.on('dong', () => {
+      client.disconnect();
+      done();
     });
   });
 });

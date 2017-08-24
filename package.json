@@ -1,17 +1,19 @@
 {
   "name": "socket-io-babel-starter-kit",
-  "version": "0.0.1",
-  "description": "Express Socket IO Starter Kit using Babel",
+  "version": "1.0.0",
+  "description": "Express Socket IO Starter Kit using Babel to compile ES^ into Js.",
   "main": "main.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "start": "gulp watch",
-    "test": "mocha -R spec"
+    "test": "mocha -R spec",
+    "debug": "gulp watch-debug",
+    "build": "gulp build"
   },
   "author": "David Wnek <dwnek@caxy.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.13.4",
     "socket.io": "^1.4.6",
