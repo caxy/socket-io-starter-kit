@@ -1,7 +1,7 @@
 {
   "name": "socket-io-babel-starter-kit",
   "version": "1.0.0",
-  "description": "Express Socket IO Starter Kit using Babel to compile ES^ into Js.",
+  "description": "Express Socket IO Starter Kit using Babel to compile ES6 into Js.",
   "main": "main.js",
   "directories": {
     "test": "test"
