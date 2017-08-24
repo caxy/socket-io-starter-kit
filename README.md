@@ -4,7 +4,7 @@
 ```bash
 git clone https://github.com/caxy/socket-io-starter-kit.git
 cd socket-io-starter-kit
-npm intall
+npm install
 ```
 
 ##Running 
